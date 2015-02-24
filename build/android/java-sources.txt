@@ -1,7 +1,0 @@
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/android/support/v7/appcompat/R.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/com/muranddesign/alloyexercise2/ApplicationStylesheet.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/com/muranddesign/alloyexercise2/Exercise2Activity.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/com/muranddesign/alloyexercise2/Exercise2AppInfo.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/com/muranddesign/alloyexercise2/Exercise2Application.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/com/muranddesign/alloyexercise2/R.java"
-"/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/build/android/gen/ti/modules/titanium/ui/R.java"
