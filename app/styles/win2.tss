@@ -5,3 +5,7 @@
 	
   
 }
+
+"#win2" : {
+	backgroundColor: "#cacaca"
+}
