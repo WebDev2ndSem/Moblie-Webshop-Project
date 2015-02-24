@@ -1,0 +1,1 @@
+/Users/oskar/Documents/Titanium_Studio_Workspace/Exercise 2/Resources/iphone/alloy/CFG.js

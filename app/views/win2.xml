@@ -1,0 +1,5 @@
+<Alloy>
+	<Window id="win2" class="container">
+		 <Label id="label" onClick="doClick">Click to close win2</Label>
+	</Window>
+</Alloy>

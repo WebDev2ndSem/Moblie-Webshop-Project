@@ -1,0 +1,53 @@
+".container": {
+	backgroundColor:"#0099FF",
+	layout:"vertical"
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"#label": {
+	top: "20dp",
+	font: {
+		fontSize: 12
+		
+	}
+}
+
+".textfields": {
+	top:"10dp",
+	color:"#336699",
+	backgroundColor:"#fff",
+	height: "60dp",
+  	width: "300dp",
+  	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  	borderRadius: "10dp"
+  	
+}
+
+"#username":{
+	hintText : "Username"
+}
+
+"#password":{
+	passwordMask: true,
+	hintText : "Password"
+}
+
+".buttons": {
+	top:"10dp",
+	width:Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	layout:"horizontal"
+}
+
+"#signup": {
+	color:"#FFFF66"
+}
+"#login": {
+	color:"#FFF"
+}

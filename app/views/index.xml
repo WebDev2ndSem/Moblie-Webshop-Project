@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container">
+		 <Label id="label" onClick="doClick">Click to open a new window</Label>
+		 <ImageView image="http://simpleicon.com/wp-content/uploads/lock-2-256x256.png" width="128" top="30" />
+		 <TextField id="username" class="textfields" />
+		 <TextField id="password" class="textfields" />
+		 <Button title="Login" onClick="doLogin" id="login" class="buttons" />
+		 <Button title="Sign Up" id="signup" class="buttons" />
+		 
+		 
+
+	</Window>
+</Alloy>
