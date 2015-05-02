@@ -1,0 +1,6 @@
+<Alloy>
+	<Window  class="container"  theme="Theme.NoActionBar" >
+		<Require src="login"></Require>
+
+	</Window>
+</Alloy>

@@ -1,0 +1,34 @@
+
+".container" : {
+  backgroundColor:"white",
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+".logo": {
+	width:"300",
+	height:"auto"
+}
+"TextField": {
+	width: "60%",
+	height: "40dp",
+	borderRadius:"3dp",
+	margin:"5dp",
+	top:"10dp",
+	borderColor: "#00aeef",
+	textAlign: "center"		
+}
+
+".menuBtn": {
+	width: "60%",
+	height: "50dp",
+	top:"10dp",
+	borderRadius: "3dp",
+	backgroundColor: "#00aeef",
+	bordercolor: "#bbbbbb"
+	
+}

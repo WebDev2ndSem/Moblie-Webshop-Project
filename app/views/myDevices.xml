@@ -1,0 +1,17 @@
+<Alloy>
+	<Collection src="myDevices" />
+	<Window class="container">
+		<TableView id="myDevicesTable" dataCollection="myDevices">
+                <TableViewRow layout="horizontal" productId="{deviceId}">
+                	<ImageView image="{deviceImage}" width="25%" />
+	                <Label text="{deviceName}" width="25%" />
+					<Label text="{deviceId}" width="25%"/>
+					<Label text="{devicestatus}" width="25%"/>
+                </TableViewRow>                
+        </TableView>
+
+        	<Button id="closeBtn" title="Back" bottom="10px"></Button>
+
+	</Window>
+                        	 	
+</Alloy>
