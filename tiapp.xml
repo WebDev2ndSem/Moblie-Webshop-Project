@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.webdev2sem.mobilewebshopproject</id>
-    <name>Exercise 2</name>
+    <id>com.verifone.dk</id>
+    <name>Verifone</name>
     <version>1.0</version>
-    <publisher>attila_mihaita_pavla_oskar</publisher>
-    <url>https://github.com/WebDev2ndSem</url>
+    <publisher>Verifone Team</publisher>
+    <url>http://</url>
     <description>undefined</description>
-    <copyright>2015 by WebDev2ndSem Team</copyright>
+    <copyright>2015 by Verifone Team</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>743986b2-2811-4293-b113-69d85df3171d</guid>
+    <guid>ab73eb67-117c-48d6-92ca-13b71e95fe4e</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
-    <property name="acs-api-key" type="string">D5AhvA5zj729rHOv6V7Xtctho0zYdYLN</property>
     <ios>
         <plist>
             <dict>
@@ -52,13 +51,13 @@
         <module platform="commonjs">ti.cloud</module>
     </modules>
     <deployment-targets>
+        <target device="iphone">false</target>
+        <target device="ipad">false</target>
         <target device="android">true</target>
         <target device="blackberry">false</target>
-        <target device="ipad">false</target>
-        <target device="iphone">false</target>
-        <target device="mobileweb">false</target>
+        <target device="mobileweb">true</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

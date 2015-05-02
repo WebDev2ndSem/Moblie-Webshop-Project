@@ -1,0 +1,10 @@
+<Alloy>
+	<Model src="myDevices" instance="true" id="Device"/>
+	<Window id="detailWindow" model="$.Device" class="container" onClick="CloseWindow" >
+		<ScrollView id="detailView">
+			<ImageView image="{$.Device.deviceImage}" width="99%" height="40%"></ImageView>
+			<Label id="description" text="{$.Device.deviceName}"></Label>
+			<Button id="closeBtn" title="Back"></Button>
+		</ScrollView>
+	</Window>
+</Alloy>
