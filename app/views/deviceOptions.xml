@@ -1,0 +1,13 @@
+<Alloy
+	<Window class="container">
+		<View>
+            <Button class="menuBtn" id="StatsButton"  onClick="openShop" title="buy Paper" />
+			<Button class="menuBtn" id="HelpButton"  onClick="openHelp" title="Get Help"  />
+			<Button class="menuBtn" id="MyDevButton"  onClick="openStats" title="Device - statistics"/>               
+        </View>
+
+        	<Button id="closeBtn" title="Back"></Button>
+
+	</Window>
+                        	 	
+</Alloy>
