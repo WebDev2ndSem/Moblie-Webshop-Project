@@ -8,40 +8,40 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId38(e) {
+    function __alloyId37(e) {
         if (e && e.fromAdapter) return;
-        __alloyId38.opts || {};
-        var models = __alloyId37.models;
+        __alloyId37.opts || {};
+        var models = __alloyId36.models;
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId26 = models[i];
-            __alloyId26.__transform = {};
-            var __alloyId28 = Ti.UI.createTableViewRow({
+            var __alloyId25 = models[i];
+            __alloyId25.__transform = {};
+            var __alloyId27 = Ti.UI.createTableViewRow({
                 layout: "horizontal",
-                productId: "undefined" != typeof __alloyId26.__transform["deviceId"] ? __alloyId26.__transform["deviceId"] : __alloyId26.get("deviceId")
+                productId: "undefined" != typeof __alloyId25.__transform["deviceId"] ? __alloyId25.__transform["deviceId"] : __alloyId25.get("deviceId")
             });
-            rows.push(__alloyId28);
-            var __alloyId30 = Ti.UI.createImageView({
-                image: "undefined" != typeof __alloyId26.__transform["deviceImage"] ? __alloyId26.__transform["deviceImage"] : __alloyId26.get("deviceImage"),
+            rows.push(__alloyId27);
+            var __alloyId29 = Ti.UI.createImageView({
+                image: "undefined" != typeof __alloyId25.__transform["deviceImage"] ? __alloyId25.__transform["deviceImage"] : __alloyId25.get("deviceImage"),
                 width: "25%"
             });
-            __alloyId28.add(__alloyId30);
-            var __alloyId32 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId26.__transform["deviceName"] ? __alloyId26.__transform["deviceName"] : __alloyId26.get("deviceName"),
+            __alloyId27.add(__alloyId29);
+            var __alloyId31 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId25.__transform["deviceName"] ? __alloyId25.__transform["deviceName"] : __alloyId25.get("deviceName"),
                 width: "25%"
             });
-            __alloyId28.add(__alloyId32);
-            var __alloyId34 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId26.__transform["deviceId"] ? __alloyId26.__transform["deviceId"] : __alloyId26.get("deviceId"),
+            __alloyId27.add(__alloyId31);
+            var __alloyId33 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId25.__transform["deviceId"] ? __alloyId25.__transform["deviceId"] : __alloyId25.get("deviceId"),
                 width: "25%"
             });
-            __alloyId28.add(__alloyId34);
-            var __alloyId36 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId26.__transform["devicestatus"] ? __alloyId26.__transform["devicestatus"] : __alloyId26.get("devicestatus"),
+            __alloyId27.add(__alloyId33);
+            var __alloyId35 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId25.__transform["devicestatus"] ? __alloyId25.__transform["devicestatus"] : __alloyId25.get("devicestatus"),
                 width: "25%"
             });
-            __alloyId28.add(__alloyId36);
+            __alloyId27.add(__alloyId35);
         }
         $.__views.myDevicesTable.setData(rows);
     }
@@ -72,8 +72,8 @@ function Controller() {
         id: "myDevicesTable"
     });
     $.__views.myDevices.add($.__views.myDevicesTable);
-    var __alloyId37 = Alloy.Collections["myDevices"] || myDevices;
-    __alloyId37.on("fetch destroy change add remove reset", __alloyId38);
+    var __alloyId36 = Alloy.Collections["myDevices"] || myDevices;
+    __alloyId36.on("fetch destroy change add remove reset", __alloyId37);
     $.__views.closeBtn = Ti.UI.createButton({
         id: "closeBtn",
         title: "Back",
@@ -81,7 +81,7 @@ function Controller() {
     });
     $.__views.myDevices.add($.__views.closeBtn);
     exports.destroy = function() {
-        __alloyId37.off("fetch destroy change add remove reset", __alloyId38);
+        __alloyId36.off("fetch destroy change add remove reset", __alloyId37);
     };
     _.extend($, $.__views);
     arguments[0] || {};

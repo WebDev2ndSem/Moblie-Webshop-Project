@@ -18,3 +18,18 @@ function CloseWindow()
 $.detailWindow.addEventListener('close', function() {
     $.destroy();
 });
+
+function openShop(e) {
+	var statistics=Alloy.createController('statistics').getView();
+    statistics.open();
+};
+
+function openDeviceHelp(e) {
+	var statistics=Alloy.createController('statistics').getView();
+    statistics.open();
+};
+
+function openDeviceStats(e) {
+	var statistics=Alloy.createController('statistics').getView();
+    statistics.open();
+};
