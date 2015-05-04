@@ -1,13 +1,15 @@
 <Alloy>
 	<Model src="myDevices" instance="true" id="Device"/>
-	<Window id="detailWindow" model="$.Device" class="container" onClick="CloseWindow" >
+	<Window id="detailWindow" model="$.Device" class="container">
 		<ScrollView id="detailView" layout="vertical">    
 			<ImageView image="{$.Device.image}" width="99%" height="40%"></ImageView>  
 			<Label id="description" text="{$.Device.name}"></Label>
-			<Button class="menuBtn" id="StatsButton"  onClick="openShop" title="buy Paper" />
-			<Button class="menuBtn" id="HelpButton"  onClick="openDeviceHelp" title="Get Help"  />
-			<Button class="menuBtn" id="MyDevButton"  onClick="openDeviceStats" title="Device - statistics"/>
+			<Button class="menuBtn" id="shopButton"  onClick="openShop" title="Order Paper" />
+			<Button class="menuBtn" id="helpButton"   title="Get Help"  />
+			<Button class="menuBtn" id="statsButton"  onClick="openDeviceStats" title="Device Statistics"/>
 			<Button class="menuBtn" id="closeBtn" title="Back"></Button>
 		</ScrollView>
 	</Window>
 </Alloy>
+
+<!-- <Window id="detailWindow" model="$.Device" class="container" onClick="CloseWindow"> -->

@@ -27,15 +27,15 @@ function Controller() {
         id: "statistics"
     });
     $.__views.statistics && $.addTopLevelView($.__views.statistics);
-    $.__views.__alloyId39 = Ti.UI.createView({
-        id: "__alloyId39"
+    $.__views.__alloyId45 = Ti.UI.createView({
+        id: "__alloyId45"
     });
-    $.__views.statistics.add($.__views.__alloyId39);
-    $.__views.__alloyId40 = Ti.UI.createLabel({
+    $.__views.statistics.add($.__views.__alloyId45);
+    $.__views.__alloyId46 = Ti.UI.createLabel({
         text: "Hello Statistics!",
-        id: "__alloyId40"
+        id: "__alloyId46"
     });
-    $.__views.__alloyId39.add($.__views.__alloyId40);
+    $.__views.__alloyId45.add($.__views.__alloyId46);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};

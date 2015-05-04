@@ -1,0 +1,14 @@
+<Alloy>
+	<Model src="myDevices" instance="true" id="Device"/>
+		<Window id="detailWindow" model="$.Device" class="container">
+		<View layout="vertical" id="detailView" >
+			<Label>Let us help you</Label>
+			<TextField hintText="device"></TextField>
+			<TextField hintText="subject"/>
+			<TextArea hintText="comments"/>
+			<Button>CALL ME</Button>
+			<Button class="menuBtn" id="closeBtn" title="Back" />
+		</View>
+	</Window>
+
+</Alloy>

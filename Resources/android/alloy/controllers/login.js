@@ -8,34 +8,34 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId20(e) {
+    function __alloyId26(e) {
         if (e && e.fromAdapter) return;
-        __alloyId20.opts || {};
-        var models = __alloyId19.models;
+        __alloyId26.opts || {};
+        var models = __alloyId25.models;
         var len = models.length;
-        var children = $.__views.__alloyId11.children;
-        for (var d = children.length - 1; d >= 0; d--) $.__views.__alloyId11.remove(children[d]);
+        var children = $.__views.__alloyId17.children;
+        for (var d = children.length - 1; d >= 0; d--) $.__views.__alloyId17.remove(children[d]);
         for (var i = 0; len > i; i++) {
-            var __alloyId12 = models[i];
-            __alloyId12.__transform = {};
-            var __alloyId14 = Ti.UI.createView({
+            var __alloyId18 = models[i];
+            __alloyId18.__transform = {};
+            var __alloyId20 = Ti.UI.createView({
                 layout: "horizontal"
             });
-            $.__views.__alloyId11.add(__alloyId14);
-            var __alloyId16 = Ti.UI.createLabel({
+            $.__views.__alloyId17.add(__alloyId20);
+            var __alloyId22 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
                 text: "Hello, "
             });
-            __alloyId14.add(__alloyId16);
-            var __alloyId18 = Ti.UI.createLabel({
+            __alloyId20.add(__alloyId22);
+            var __alloyId24 = Ti.UI.createLabel({
                 width: Ti.UI.SIZE,
                 height: Ti.UI.SIZE,
                 color: "#000",
-                text: "undefined" != typeof __alloyId12.__transform["firstName"] ? __alloyId12.__transform["firstName"] : __alloyId12.get("firstName")
+                text: "undefined" != typeof __alloyId18.__transform["firstName"] ? __alloyId18.__transform["firstName"] : __alloyId18.get("firstName")
             });
-            __alloyId14.add(__alloyId18);
+            __alloyId20.add(__alloyId24);
         }
     }
     function openStats() {
@@ -96,26 +96,26 @@ function Controller() {
         id: "loginView"
     });
     $.__views.loginView && $.addTopLevelView($.__views.loginView);
-    $.__views.__alloyId11 = Ti.UI.createView({
+    $.__views.__alloyId17 = Ti.UI.createView({
         layout: "horizontal",
-        id: "__alloyId11"
+        id: "__alloyId17"
     });
-    $.__views.loginView.add($.__views.__alloyId11);
-    var __alloyId19 = Alloy.Collections["login"] || login;
-    __alloyId19.on("fetch destroy change add remove reset", __alloyId20);
+    $.__views.loginView.add($.__views.__alloyId17);
+    var __alloyId25 = Alloy.Collections["login"] || login;
+    __alloyId25.on("fetch destroy change add remove reset", __alloyId26);
     $.__views.login = Ti.UI.createView({
         layout: "vertical",
         id: "login",
         visible: "true"
     });
     $.__views.loginView.add($.__views.login);
-    $.__views.__alloyId21 = Ti.UI.createImageView({
+    $.__views.__alloyId27 = Ti.UI.createImageView({
         width: "300",
         height: "auto",
         image: "/logo.png",
-        id: "__alloyId21"
+        id: "__alloyId27"
     });
-    $.__views.login.add($.__views.__alloyId21);
+    $.__views.login.add($.__views.__alloyId27);
     $.__views.username = Ti.UI.createTextField({
         width: "60%",
         height: "40dp",
@@ -124,6 +124,7 @@ function Controller() {
         top: "10dp",
         borderColor: "#00aeef",
         textAlign: "center",
+        color: "#000000",
         id: "username",
         hintText: "Username"
     });
@@ -136,6 +137,7 @@ function Controller() {
         top: "10dp",
         borderColor: "#00aeef",
         textAlign: "center",
+        color: "#000000",
         id: "password",
         hintText: "Password",
         passwordMask: "true"
@@ -152,29 +154,29 @@ function Controller() {
         visible: "false"
     });
     $.__views.loginView.add($.__views.loginError);
-    $.__views.__alloyId22 = Ti.UI.createLabel({
+    $.__views.__alloyId28 = Ti.UI.createLabel({
         width: "300",
         height: "50",
         color: "#000",
         text: "Please enter the correct username and password.",
         top: "10",
         backgroundColor: "grey",
-        id: "__alloyId22"
+        id: "__alloyId28"
     });
-    $.__views.loginError.add($.__views.__alloyId22);
+    $.__views.loginError.add($.__views.__alloyId28);
     $.__views.menu = Ti.UI.createView({
         layout: "vertical",
         id: "menu",
         visible: "false"
     });
     $.__views.loginView.add($.__views.menu);
-    $.__views.__alloyId23 = Ti.UI.createImageView({
+    $.__views.__alloyId29 = Ti.UI.createImageView({
         width: "300",
         height: "auto",
         image: "/logo.png",
-        id: "__alloyId23"
+        id: "__alloyId29"
     });
-    $.__views.menu.add($.__views.__alloyId23);
+    $.__views.menu.add($.__views.__alloyId29);
     $.__views.StatsButton = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
@@ -224,7 +226,7 @@ function Controller() {
     $.__views.menu.add($.__views.logoutBut);
     logoutBut ? $.__views.logoutBut.addEventListener("click", logoutBut) : __defers["$.__views.logoutBut!click!logoutBut"] = true;
     exports.destroy = function() {
-        __alloyId19.off("fetch destroy change add remove reset", __alloyId20);
+        __alloyId25.off("fetch destroy change add remove reset", __alloyId26);
     };
     _.extend($, $.__views);
     if (Titanium.App.Properties.hasProperty("encodedUser")) {

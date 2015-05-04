@@ -12,12 +12,8 @@ function Controller() {
         $.detailWindow.close();
     }
     function openShop() {
-        var statistics = Alloy.createController("statistics").getView();
-        statistics.open();
-    }
-    function openDeviceHelp() {
-        var statistics = Alloy.createController("statistics").getView();
-        statistics.open();
+        var orderPaper = Alloy.createController("orderPaper").getView();
+        orderPaper.open();
     }
     function openDeviceStats() {
         var statistics = Alloy.createController("statistics").getView();
@@ -45,58 +41,56 @@ function Controller() {
         model: "$.Device"
     });
     $.__views.detailWindow && $.addTopLevelView($.__views.detailWindow);
-    CloseWindow ? $.__views.detailWindow.addEventListener("click", CloseWindow) : __defers["$.__views.detailWindow!click!CloseWindow"] = true;
     $.__views.detailView = Ti.UI.createScrollView({
         id: "detailView",
         layout: "vertical"
     });
     $.__views.detailWindow.add($.__views.detailView);
-    $.__views.__alloyId0 = Ti.UI.createImageView({
+    $.__views.__alloyId5 = Ti.UI.createImageView({
         width: "99%",
         height: "40%",
-        id: "__alloyId0"
+        id: "__alloyId5"
     });
-    $.__views.detailView.add($.__views.__alloyId0);
+    $.__views.detailView.add($.__views.__alloyId5);
     $.__views.description = Ti.UI.createLabel({
         id: "description"
     });
     $.__views.detailView.add($.__views.description);
-    $.__views.StatsButton = Ti.UI.createButton({
+    $.__views.shopButton = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
         top: "10dp",
         borderRadius: "3dp",
         backgroundColor: "#00aeef",
         bordercolor: "#bbbbbb",
-        id: "StatsButton",
-        title: "buy Paper"
+        id: "shopButton",
+        title: "Order Paper"
     });
-    $.__views.detailView.add($.__views.StatsButton);
-    openShop ? $.__views.StatsButton.addEventListener("click", openShop) : __defers["$.__views.StatsButton!click!openShop"] = true;
-    $.__views.HelpButton = Ti.UI.createButton({
+    $.__views.detailView.add($.__views.shopButton);
+    openShop ? $.__views.shopButton.addEventListener("click", openShop) : __defers["$.__views.shopButton!click!openShop"] = true;
+    $.__views.helpButton = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
         top: "10dp",
         borderRadius: "3dp",
         backgroundColor: "#00aeef",
         bordercolor: "#bbbbbb",
-        id: "HelpButton",
+        id: "helpButton",
         title: "Get Help"
     });
-    $.__views.detailView.add($.__views.HelpButton);
-    openDeviceHelp ? $.__views.HelpButton.addEventListener("click", openDeviceHelp) : __defers["$.__views.HelpButton!click!openDeviceHelp"] = true;
-    $.__views.MyDevButton = Ti.UI.createButton({
+    $.__views.detailView.add($.__views.helpButton);
+    $.__views.statsButton = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
         top: "10dp",
         borderRadius: "3dp",
         backgroundColor: "#00aeef",
         bordercolor: "#bbbbbb",
-        id: "MyDevButton",
-        title: "Device - statistics"
+        id: "statsButton",
+        title: "Device Statistics"
     });
-    $.__views.detailView.add($.__views.MyDevButton);
-    openDeviceStats ? $.__views.MyDevButton.addEventListener("click", openDeviceStats) : __defers["$.__views.MyDevButton!click!openDeviceStats"] = true;
+    $.__views.detailView.add($.__views.statsButton);
+    openDeviceStats ? $.__views.statsButton.addEventListener("click", openDeviceStats) : __defers["$.__views.statsButton!click!openDeviceStats"] = true;
     $.__views.closeBtn = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
@@ -108,33 +102,38 @@ function Controller() {
         title: "Back"
     });
     $.__views.detailView.add($.__views.closeBtn);
-    var __alloyId1 = function() {
-        $.__alloyId0.image = _.isFunction($.Device.transform) ? $.Device.transform()["image"] : _.template("<%=Device.image%>", {
+    var __alloyId6 = function() {
+        $.__alloyId5.image = _.isFunction($.Device.transform) ? $.Device.transform()["image"] : _.template("<%=Device.image%>", {
             Device: $.Device.toJSON()
         });
         $.description.text = _.isFunction($.Device.transform) ? $.Device.transform()["name"] : _.template("<%=Device.name%>", {
             Device: $.Device.toJSON()
         });
     };
-    $.Device.on("fetch change destroy", __alloyId1);
+    $.Device.on("fetch change destroy", __alloyId6);
     exports.destroy = function() {
-        $.Device.off("fetch change destroy", __alloyId1);
+        $.Device.off("fetch change destroy", __alloyId6);
     };
     _.extend($, $.__views);
     var args = arguments[0] || {};
-    Ti.API.info(args.model);
     $.Device.set(args.data.attributes);
-    Ti.API.info($.Device);
     $.closeBtn.addEventListener("click", function() {
         CloseWindow();
     });
     $.detailWindow.addEventListener("close", function() {
         $.destroy();
     });
-    __defers["$.__views.detailWindow!click!CloseWindow"] && $.__views.detailWindow.addEventListener("click", CloseWindow);
-    __defers["$.__views.StatsButton!click!openShop"] && $.__views.StatsButton.addEventListener("click", openShop);
-    __defers["$.__views.HelpButton!click!openDeviceHelp"] && $.__views.HelpButton.addEventListener("click", openDeviceHelp);
-    __defers["$.__views.MyDevButton!click!openDeviceStats"] && $.__views.MyDevButton.addEventListener("click", openDeviceStats);
+    $.helpButton.addEventListener("click", function() {
+        var model = Alloy.Collections.myDevices.getByCid("deviceId");
+        var deviceHelpController = Alloy.createController("deviceHelp", {
+            data: model
+        });
+        deviceHelpController.getView().open({
+            modal: true
+        });
+    });
+    __defers["$.__views.shopButton!click!openShop"] && $.__views.shopButton.addEventListener("click", openShop);
+    __defers["$.__views.statsButton!click!openDeviceStats"] && $.__views.statsButton.addEventListener("click", openDeviceStats);
     _.extend($, exports);
 }
 

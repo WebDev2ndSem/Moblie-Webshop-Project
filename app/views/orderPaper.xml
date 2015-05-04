@@ -1,0 +1,6 @@
+<Alloy>
+    <Window id="orderPaper" modal="true">
+    	<!-- Apparently - according to the website every device except VX 520 Color uses this paper. VX 520 Color does not match any paper they sell and hould not give this option. Thus, hardcoded url for now to save time. -->
+        <WebView id="verifonePaperSection" url="https://shop.verifone.dk/produkt/bonruller/terminalrulle-thermo-57mm-17m" />
+    </Window>
+</Alloy>

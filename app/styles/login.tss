@@ -20,7 +20,8 @@
 	margin:"5dp",
 	top:"10dp",
 	borderColor: "#00aeef",
-	textAlign: "center"		
+	textAlign: "center",
+	color: "#000000"
 }
 
 ".menuBtn": {

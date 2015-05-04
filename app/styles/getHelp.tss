@@ -17,12 +17,26 @@
 	borderColor: "#bbbbbb"
 }
 
-"Button" : {
-	width: "100dp",
-	height: "100dp",
-	borderRadius: "45dp",
-	border: "solid",
-	borderColor: "#bbbbbb",
+".buttonContainer" : {
+	layout: "horizontal",
+	width: "100%",
+	height: "50dp",
+	top: "5dp"
+}
+
+".menuBtn": {
+	width: "30%",
+	height: "50dp",
+	//top:"10dp",
+	top: "5dp", right: "5dp", bottom: "5dp", left: "5dp",
+	borderRadius: "3dp",
 	backgroundColor: "#00aeef",
-	color: "white"
+	bordercolor: "#bbbbbb"
+	
+}
+
+".callBtn" : {
+
+	borderColor: "#62C462",
+	backgroundColor: "#62C462",
 }

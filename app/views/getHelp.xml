@@ -5,7 +5,10 @@
 			<TextField hintText="device"/>
 			<TextField hintText="subject"/>
 			<TextArea hintText="comments"/>
-			<Button>CALL ME</Button>
+			<View class="buttonContainer">
+				<Button class="menuBtn callBtn">CALL ME</Button>
+				<Button class="menuBtn" id="closeBtn" title="Back" />
+			</View>
 		</View>
 	</Window>
 </Alloy>

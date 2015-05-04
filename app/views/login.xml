@@ -10,8 +10,8 @@
 		<!-->LOGIN FORM<!-->
 		<View layout="vertical" id="login" visible="true">
 			<ImageView class="logo" image="/logo.png"/>			
-	        <TextField id="username"  hintText="Username" />
-	        <TextField id="password" hintText="Password" passwordMask="true" />
+	        <TextField id="username"  hintText="Username" ></TextField>
+	        <TextField id="password" hintText="Password" passwordMask="true" ></TextField>
 	         <Button id="loginButton"  onClick="doLogin" title="Log In" />
 		</View>
 		<!-->INVALID CREDENTIALS<!-->
