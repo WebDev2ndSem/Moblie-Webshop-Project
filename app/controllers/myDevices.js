@@ -9,8 +9,9 @@
 	    	
 	        _.each(collection.models, function(element, index, list){
 	            element.attributes.title = element.attributes.deviceName + " for " + element.attributes.deviceStatus;
-	            element.attributes.productid = element.deviceId;
-	            element.attributes.description = element.attributes.deviceImage;
+	            element.attributes.deviceId = element.cid;
+	            element.attributes.name = element.attributes.deviceName;
+	            element.attributes.image = element.attributes.deviceImage;
 	            // We are looping through the returned models from the remote REST API
 	            // Implement your custom logic here
 	        });
@@ -26,7 +27,7 @@
 $.myDevicesTable.addEventListener('click', function(_event) {
     // get the correct model
     var model =
-        Alloy.Collections.myDevices.getByCid(_event.rowData.productId);
+        Alloy.Collections.myDevices.getByCid(_event.rowData.deviceId);
     // create the controller and pass in the model
     var deviceMenuController = Alloy.createController('deviceMenu', {
         data : model
@@ -52,6 +53,8 @@ function CloseWindow()
 $.myDevices.addEventListener('close', function() {
     $.destroy();
 });
+
+
 
 
 $.myDevices.open() ;

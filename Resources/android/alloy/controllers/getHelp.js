@@ -28,44 +28,44 @@ function Controller() {
         id: "getHelp"
     });
     $.__views.getHelp && $.addTopLevelView($.__views.getHelp);
-    $.__views.__alloyId1 = Ti.UI.createView({
+    $.__views.__alloyId2 = Ti.UI.createView({
         layout: "vertical",
-        id: "__alloyId1"
-    });
-    $.__views.getHelp.add($.__views.__alloyId1);
-    $.__views.__alloyId2 = Ti.UI.createLabel({
-        text: "Let us help you",
         id: "__alloyId2"
     });
-    $.__views.__alloyId1.add($.__views.__alloyId2);
-    $.__views.__alloyId3 = Ti.UI.createTextField({
-        widht: "60%",
-        height: "20dp",
-        top: "5dp",
-        borderColor: "#bbbbbb",
-        hintText: "device",
+    $.__views.getHelp.add($.__views.__alloyId2);
+    $.__views.__alloyId3 = Ti.UI.createLabel({
+        text: "Let us help you",
         id: "__alloyId3"
     });
-    $.__views.__alloyId1.add($.__views.__alloyId3);
+    $.__views.__alloyId2.add($.__views.__alloyId3);
     $.__views.__alloyId4 = Ti.UI.createTextField({
         widht: "60%",
         height: "20dp",
         top: "5dp",
         borderColor: "#bbbbbb",
-        hintText: "subject",
+        hintText: "device",
         id: "__alloyId4"
     });
-    $.__views.__alloyId1.add($.__views.__alloyId4);
-    $.__views.__alloyId5 = Ti.UI.createTextArea({
+    $.__views.__alloyId2.add($.__views.__alloyId4);
+    $.__views.__alloyId5 = Ti.UI.createTextField({
+        widht: "60%",
+        height: "20dp",
+        top: "5dp",
+        borderColor: "#bbbbbb",
+        hintText: "subject",
+        id: "__alloyId5"
+    });
+    $.__views.__alloyId2.add($.__views.__alloyId5);
+    $.__views.__alloyId6 = Ti.UI.createTextArea({
         widht: "60%",
         height: "60dp",
         top: "5dp",
         borderColor: "#bbbbbb",
         hintText: "comments",
-        id: "__alloyId5"
+        id: "__alloyId6"
     });
-    $.__views.__alloyId1.add($.__views.__alloyId5);
-    $.__views.__alloyId6 = Ti.UI.createButton({
+    $.__views.__alloyId2.add($.__views.__alloyId6);
+    $.__views.__alloyId7 = Ti.UI.createButton({
         width: "100dp",
         height: "100dp",
         borderRadius: "45dp",
@@ -74,9 +74,9 @@ function Controller() {
         backgroundColor: "#00aeef",
         color: "white",
         title: "CALL ME",
-        id: "__alloyId6"
+        id: "__alloyId7"
     });
-    $.__views.__alloyId1.add($.__views.__alloyId6);
+    $.__views.__alloyId2.add($.__views.__alloyId7);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};

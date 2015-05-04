@@ -1,6 +1,4 @@
-
 exports.definition = {  
-   
     config: {
     	"authstr": null,
         "URL": "http://old.muranddesign.com/verifone/user/devices",

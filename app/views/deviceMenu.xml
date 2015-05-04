@@ -1,7 +1,9 @@
 <Alloy>
 	<Model src="myDevices" instance="true" id="Device"/>
 	<Window id="detailWindow" model="$.Device" class="container" onClick="CloseWindow" >
-		<ScrollView id="detailView" layout="vertical">            
+		<ScrollView id="detailView" layout="vertical">    
+			<ImageView image="{$.Device.image}" width="99%" height="40%"></ImageView>  
+			<Label id="description" text="{$.Device.name}"></Label>
 			<Button class="menuBtn" id="StatsButton"  onClick="openShop" title="buy Paper" />
 			<Button class="menuBtn" id="HelpButton"  onClick="openDeviceHelp" title="Get Help"  />
 			<Button class="menuBtn" id="MyDevButton"  onClick="openDeviceStats" title="Device - statistics"/>

@@ -2,7 +2,7 @@
 	<Collection src="myDevices" />
 	<Window class="container">
 		<TableView id="myDevicesTable" dataCollection="myDevices">
-                <TableViewRow layout="horizontal" productId="{deviceId}">
+                <TableViewRow layout="horizontal" deviceId="{deviceId}">
                 	<ImageView image="{deviceImage}" width="25%" />
 	                <Label text="{deviceName}" width="25%" />
 					<Label text="{deviceId}" width="25%"/>

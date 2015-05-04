@@ -51,6 +51,16 @@ function Controller() {
         layout: "vertical"
     });
     $.__views.detailWindow.add($.__views.detailView);
+    $.__views.__alloyId0 = Ti.UI.createImageView({
+        width: "99%",
+        height: "40%",
+        id: "__alloyId0"
+    });
+    $.__views.detailView.add($.__views.__alloyId0);
+    $.__views.description = Ti.UI.createLabel({
+        id: "description"
+    });
+    $.__views.detailView.add($.__views.description);
     $.__views.StatsButton = Ti.UI.createButton({
         width: "60%",
         height: "50dp",
@@ -98,9 +108,23 @@ function Controller() {
         title: "Back"
     });
     $.__views.detailView.add($.__views.closeBtn);
-    exports.destroy = function() {};
+    var __alloyId1 = function() {
+        $.__alloyId0.image = _.isFunction($.Device.transform) ? $.Device.transform()["image"] : _.template("<%=Device.image%>", {
+            Device: $.Device.toJSON()
+        });
+        $.description.text = _.isFunction($.Device.transform) ? $.Device.transform()["name"] : _.template("<%=Device.name%>", {
+            Device: $.Device.toJSON()
+        });
+    };
+    $.Device.on("fetch change destroy", __alloyId1);
+    exports.destroy = function() {
+        $.Device.off("fetch change destroy", __alloyId1);
+    };
     _.extend($, $.__views);
-    arguments[0] || {};
+    var args = arguments[0] || {};
+    Ti.API.info(args.model);
+    $.Device.set(args.data.attributes);
+    Ti.API.info($.Device);
     $.closeBtn.addEventListener("click", function() {
         CloseWindow();
     });
