@@ -1,7 +1,19 @@
 <Alloy>
 	<Window class="container">
-		<View>
-			<Label>Hello Statistics!</Label>
+		<View layout="horizontal">
+		<Label>Statistics</Label>
+			<View class="statView"  >
+				 <Label>Daily payment:</Label>
+			</View>
+			
+			<View class="statView" layout="vertical" >
+				 <Label>Weekly payment</Label>
+			</View>
+			
+			<View class="statView" >
+				 <Label>Monthly payment</Label>
+			</View>
+		<Button id="closeBtn" title="Back"/>
 		</View>
 	</Window>
 </Alloy>

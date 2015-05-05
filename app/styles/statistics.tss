@@ -1,4 +1,16 @@
-
 ".container" : {
-  
+   backgroundColor: "white",
+}
+
+".statView" : {
+	margin: "10dp",
+	
+}
+
+"#closeBtn" : {
+	width: "100dp",
+	height: "40dp",
+	backgroundColor: "#00aeef",
+	bottom: "10dp"
+	
 }

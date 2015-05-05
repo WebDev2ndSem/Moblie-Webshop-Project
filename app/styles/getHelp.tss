@@ -3,40 +3,32 @@
   backgroundColor: "white",
 }
 
+
 "TextField" : {
-	widht:"60%",
-	height: "20dp",
-	top: "5dp",
+	width:"80%",
+	height: "60dp",
+	top: "20dp",
 	borderColor: "#bbbbbb"
 }
 
 "TextArea" : {
-	widht:"60%",
-	height: "60dp",
-	top: "5dp",
+	width:"80%",
+	height: "100dp",
+	top: "20dp",
 	borderColor: "#bbbbbb"
 }
 
-".buttonContainer" : {
-	layout: "horizontal",
-	width: "100%",
-	height: "50dp",
-	top: "5dp"
-}
 
-".menuBtn": {
-	width: "30%",
-	height: "50dp",
-	//top:"10dp",
-	top: "5dp", right: "5dp", bottom: "5dp", left: "5dp",
-	borderRadius: "3dp",
+"#closeBtn" : {
+	width: "100dp",
+	height: "40dp",
 	backgroundColor: "#00aeef",
-	bordercolor: "#bbbbbb"
+	bottom: "10dp"
 	
 }
 
 ".callBtn" : {
-
-	borderColor: "#62C462",
-	backgroundColor: "#62C462",
+	backgroundColor: "#00aeef",
+	top: "20dp"
+	
 }
