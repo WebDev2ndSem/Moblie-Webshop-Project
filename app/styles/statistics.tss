@@ -2,7 +2,7 @@
    backgroundColor: "white",
 }
 
-"#statView" : {
+"#mainView" : {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	top: "20dp"

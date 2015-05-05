@@ -2,7 +2,11 @@
 ".container" : {
  	backgroundColor: "white" 
 }
-
+"#mainView" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	top: "30dp"
+}
 "#closeBtn" : {
 	width: "100dp",
 	height: "40dp",

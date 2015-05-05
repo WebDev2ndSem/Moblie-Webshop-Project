@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<Label top="10dp">Statistics</Label>
-		<View id="statView" layout="horizontal" >
+		<View id="mainView" layout="horizontal" >
 		
 			<View class="statView"  layout="vertical">
 				 <Label>Daily payments:</Label>

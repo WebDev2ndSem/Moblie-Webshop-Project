@@ -1,7 +1,8 @@
 <Alloy>
 	<Collection src="myDevices" />
 	<Window class="container">
-		<Label>My Devices</Label>
+		<Label top="10dp">My Devices</Label>
+		<View id="mainView" layout="horizontal" >
 		<TableView id="myDevicesTable" dataCollection="myDevices">
                 <TableViewRow layout="horizontal" deviceId="{deviceId}">
                 	<ImageView image="{deviceImage}" width="25%" />
@@ -10,8 +11,8 @@
 					<Label text="{devicestatus}" width="25%"/>
                 </TableViewRow>                
         </TableView>
-
-        	<Button id="closeBtn" title="Back"/>
+		</View>
+        <Button id="closeBtn" title="Back"/>
 
 	</Window>
                         	 	
