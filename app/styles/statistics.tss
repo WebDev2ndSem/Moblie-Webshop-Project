@@ -2,8 +2,16 @@
    backgroundColor: "white",
 }
 
+"#statView" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	top: "20dp"
+}
 ".statView" : {
-	margin: "10dp",
+	width:"80%",
+	height: "25%",
+	top: "20dp",
+	borderColor: "#bbbbbb"
 	
 }
 
