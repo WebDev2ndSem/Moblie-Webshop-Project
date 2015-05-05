@@ -4,15 +4,15 @@
 		<View id="statView" layout="horizontal" >
 		
 			<View class="statView"  layout="vertical">
-				 <Label>Daily payment:</Label>
+				 <Label>Daily payments:</Label>
 			</View>
 			
 			<View class="statView" layout="vertical" >
-				 <Label>Weekly payment</Label>
+				 <Label>Weekly payments:</Label>
 			</View>
 			
 			<View class="statView" layout="vertical">
-				 <Label>Monthly payment</Label>
+				 <Label>Monthly payments:</Label>
 			</View>
 		
 		</View>
