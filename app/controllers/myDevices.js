@@ -2,6 +2,7 @@
 	var args = arguments[0] || {};
 	var collection = Alloy.Collections.myDevices;
 	// SETTING THE HEADER PROPERLY
+	Alloy.Globals.authstr = Titanium.App.Properties.getString('encodedUser');
 	collection.config.headers.Authorization = Alloy.Globals.authstr;
 	collection.fetch({ 
 	    success : function(){

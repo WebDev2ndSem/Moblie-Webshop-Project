@@ -8,40 +8,40 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId44(e) {
+    function __alloyId43(e) {
         if (e && e.fromAdapter) return;
-        __alloyId44.opts || {};
-        var models = __alloyId43.models;
+        __alloyId43.opts || {};
+        var models = __alloyId42.models;
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId32 = models[i];
-            __alloyId32.__transform = {};
-            var __alloyId34 = Ti.UI.createTableViewRow({
+            var __alloyId31 = models[i];
+            __alloyId31.__transform = {};
+            var __alloyId33 = Ti.UI.createTableViewRow({
                 layout: "horizontal",
-                deviceId: "undefined" != typeof __alloyId32.__transform["deviceId"] ? __alloyId32.__transform["deviceId"] : __alloyId32.get("deviceId")
+                deviceId: "undefined" != typeof __alloyId31.__transform["deviceId"] ? __alloyId31.__transform["deviceId"] : __alloyId31.get("deviceId")
             });
-            rows.push(__alloyId34);
-            var __alloyId36 = Ti.UI.createImageView({
-                image: "undefined" != typeof __alloyId32.__transform["deviceImage"] ? __alloyId32.__transform["deviceImage"] : __alloyId32.get("deviceImage"),
+            rows.push(__alloyId33);
+            var __alloyId35 = Ti.UI.createImageView({
+                image: "undefined" != typeof __alloyId31.__transform["deviceImage"] ? __alloyId31.__transform["deviceImage"] : __alloyId31.get("deviceImage"),
                 width: "25%"
             });
-            __alloyId34.add(__alloyId36);
-            var __alloyId38 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId32.__transform["deviceName"] ? __alloyId32.__transform["deviceName"] : __alloyId32.get("deviceName"),
+            __alloyId33.add(__alloyId35);
+            var __alloyId37 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId31.__transform["deviceName"] ? __alloyId31.__transform["deviceName"] : __alloyId31.get("deviceName"),
                 width: "25%"
             });
-            __alloyId34.add(__alloyId38);
-            var __alloyId40 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId32.__transform["deviceId"] ? __alloyId32.__transform["deviceId"] : __alloyId32.get("deviceId"),
+            __alloyId33.add(__alloyId37);
+            var __alloyId39 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId31.__transform["deviceId"] ? __alloyId31.__transform["deviceId"] : __alloyId31.get("deviceId"),
                 width: "25%"
             });
-            __alloyId34.add(__alloyId40);
-            var __alloyId42 = Ti.UI.createLabel({
-                text: "undefined" != typeof __alloyId32.__transform["devicestatus"] ? __alloyId32.__transform["devicestatus"] : __alloyId32.get("devicestatus"),
+            __alloyId33.add(__alloyId39);
+            var __alloyId41 = Ti.UI.createLabel({
+                text: "undefined" != typeof __alloyId31.__transform["devicestatus"] ? __alloyId31.__transform["devicestatus"] : __alloyId31.get("devicestatus"),
                 width: "25%"
             });
-            __alloyId34.add(__alloyId42);
+            __alloyId33.add(__alloyId41);
         }
         $.__views.myDevicesTable.setData(rows);
     }
@@ -65,27 +65,46 @@ function Controller() {
     var exports = {};
     Alloy.Collections.instance("myDevices");
     $.__views.myDevices = Ti.UI.createWindow({
+        backgroundColor: "white",
         id: "myDevices"
     });
     $.__views.myDevices && $.addTopLevelView($.__views.myDevices);
+    $.__views.__alloyId30 = Ti.UI.createLabel({
+        text: "My Devices",
+        top: "10dp",
+        id: "__alloyId30"
+    });
+    $.__views.myDevices.add($.__views.__alloyId30);
+    $.__views.mainView = Ti.UI.createView({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        top: "30dp",
+        id: "mainView",
+        layout: "horizontal"
+    });
+    $.__views.myDevices.add($.__views.mainView);
     $.__views.myDevicesTable = Ti.UI.createTableView({
         id: "myDevicesTable"
     });
-    $.__views.myDevices.add($.__views.myDevicesTable);
-    var __alloyId43 = Alloy.Collections["myDevices"] || myDevices;
-    __alloyId43.on("fetch destroy change add remove reset", __alloyId44);
+    $.__views.mainView.add($.__views.myDevicesTable);
+    var __alloyId42 = Alloy.Collections["myDevices"] || myDevices;
+    __alloyId42.on("fetch destroy change add remove reset", __alloyId43);
     $.__views.closeBtn = Ti.UI.createButton({
+        width: "100dp",
+        height: "40dp",
+        backgroundColor: "#00aeef",
+        bottom: "10dp",
         id: "closeBtn",
-        title: "Back",
-        bottom: "10px"
+        title: "Back"
     });
     $.__views.myDevices.add($.__views.closeBtn);
     exports.destroy = function() {
-        __alloyId43.off("fetch destroy change add remove reset", __alloyId44);
+        __alloyId42.off("fetch destroy change add remove reset", __alloyId43);
     };
     _.extend($, $.__views);
     arguments[0] || {};
     var collection = Alloy.Collections.myDevices;
+    Alloy.Globals.authstr = Titanium.App.Properties.getString("encodedUser");
     collection.config.headers.Authorization = Alloy.Globals.authstr;
     collection.fetch({
         success: function() {

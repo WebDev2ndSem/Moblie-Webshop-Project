@@ -8,6 +8,25 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
+    function doGetHelp() {
+        Alloy.Globals.authstr = Titanium.App.Properties.getString("encodedUser");
+        Alloy.Globals.problemDeviceId = $.problemDeviceId.value;
+        Alloy.Globals.problemDeviceId = $.subject.value;
+        Alloy.Globals.problemDeviceId = $.comments.value;
+        arguments[0] || {};
+        var collection = Alloy.Collections.getHelp;
+        collection.config.headers.Authorization = Alloy.Globals.authstr;
+        collection.config.headers.problemDeviceId = Alloy.Globals.problemDeviceId;
+        collection.config.headers.subject = Alloy.Globals.subject;
+        collection.config.headers.comments = Alloy.Globals.comments;
+        collection.save();
+        collection.fetch({
+            success: function() {
+                _.each(collection.models, function() {});
+            },
+            error: function() {}
+        });
+    }
     function CloseWindow() {
         $.getHelp.close();
     }
@@ -26,85 +45,68 @@ function Controller() {
     }
     var $ = this;
     var exports = {};
+    var __defers = {};
+    Alloy.Collections.instance("getHelp");
     $.__views.getHelp = Ti.UI.createWindow({
         backgroundColor: "white",
         id: "getHelp"
     });
     $.__views.getHelp && $.addTopLevelView($.__views.getHelp);
-    $.__views.__alloyId7 = Ti.UI.createView({
+    $.__views.__alloyId9 = Ti.UI.createView({
         layout: "vertical",
-        id: "__alloyId7"
-    });
-    $.__views.getHelp.add($.__views.__alloyId7);
-    $.__views.__alloyId8 = Ti.UI.createLabel({
-        text: "Let us help you",
-        id: "__alloyId8"
-    });
-    $.__views.__alloyId7.add($.__views.__alloyId8);
-    $.__views.__alloyId9 = Ti.UI.createTextField({
-        widht: "60%",
-        height: "20dp",
-        top: "5dp",
-        borderColor: "#bbbbbb",
-        hintText: "device",
         id: "__alloyId9"
     });
-    $.__views.__alloyId7.add($.__views.__alloyId9);
-    $.__views.__alloyId10 = Ti.UI.createTextField({
-        widht: "60%",
-        height: "20dp",
-        top: "5dp",
-        borderColor: "#bbbbbb",
-        hintText: "subject",
+    $.__views.getHelp.add($.__views.__alloyId9);
+    $.__views.__alloyId10 = Ti.UI.createLabel({
+        text: "Report problem",
         id: "__alloyId10"
     });
-    $.__views.__alloyId7.add($.__views.__alloyId10);
-    $.__views.__alloyId11 = Ti.UI.createTextArea({
-        widht: "60%",
+    $.__views.__alloyId9.add($.__views.__alloyId10);
+    $.__views.problemDeviceId = Ti.UI.createTextField({
+        width: "80%",
         height: "60dp",
-        top: "5dp",
+        top: "20dp",
         borderColor: "#bbbbbb",
-        hintText: "comments",
+        id: "problemDeviceId",
+        hintText: "device"
+    });
+    $.__views.__alloyId9.add($.__views.problemDeviceId);
+    $.__views.subject = Ti.UI.createTextField({
+        width: "80%",
+        height: "60dp",
+        top: "20dp",
+        borderColor: "#bbbbbb",
+        id: "subject",
+        hintText: "subject"
+    });
+    $.__views.__alloyId9.add($.__views.subject);
+    $.__views.comments = Ti.UI.createTextArea({
+        width: "80%",
+        height: "100dp",
+        top: "20dp",
+        borderColor: "#bbbbbb",
+        id: "comments",
+        hintText: "comments"
+    });
+    $.__views.__alloyId9.add($.__views.comments);
+    $.__views.__alloyId11 = Ti.UI.createButton({
+        backgroundColor: "#00aeef",
+        top: "20dp",
+        title: "CALL ME",
         id: "__alloyId11"
     });
-    $.__views.__alloyId7.add($.__views.__alloyId11);
-    $.__views.__alloyId12 = Ti.UI.createView({
-        layout: "horizontal",
-        width: "100%",
-        height: "50dp",
-        top: "5dp",
-        id: "__alloyId12"
-    });
-    $.__views.__alloyId7.add($.__views.__alloyId12);
-    $.__views.__alloyId13 = Ti.UI.createButton({
-        width: "30%",
-        height: "50dp",
-        top: "5dp",
-        right: "5dp",
-        bottom: "5dp",
-        left: "5dp",
-        borderRadius: "3dp",
-        backgroundColor: "#62C462",
-        bordercolor: "#bbbbbb",
-        borderColor: "#62C462",
-        title: "CALL ME",
-        id: "__alloyId13"
-    });
-    $.__views.__alloyId12.add($.__views.__alloyId13);
+    $.__views.__alloyId9.add($.__views.__alloyId11);
+    doGetHelp ? $.__views.__alloyId11.addEventListener("click", doGetHelp) : __defers["$.__views.__alloyId11!click!doGetHelp"] = true;
     $.__views.closeBtn = Ti.UI.createButton({
-        width: "30%",
-        height: "50dp",
-        top: "5dp",
-        right: "5dp",
-        bottom: "5dp",
-        left: "5dp",
-        borderRadius: "3dp",
+        width: "100dp",
+        height: "40dp",
         backgroundColor: "#00aeef",
-        bordercolor: "#bbbbbb",
+        bottom: "10dp",
         id: "closeBtn",
-        title: "Back"
+        title: "Back",
+        layout: "horizontal"
     });
-    $.__views.__alloyId12.add($.__views.closeBtn);
+    $.__views.getHelp.add($.__views.closeBtn);
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
@@ -115,6 +117,7 @@ function Controller() {
         $.destroy();
     });
     $.getHelp.open();
+    __defers["$.__views.__alloyId11!click!doGetHelp"] && $.__views.__alloyId11.addEventListener("click", doGetHelp);
     _.extend($, exports);
 }
 

@@ -1,11 +1,12 @@
 <Alloy>
+	<Collection src="getHelp" />
 	<Window id="getHelp" class="container">
 		<View layout="vertical">
 			<Label>Report problem</Label>
-			<TextField hintText="device"/>
-			<TextField hintText="subject"/>
-			<TextArea hintText="comments"/>
-			<Button class="callBtn">CALL ME</Button>
+			<TextField id="problemDeviceId" hintText="device"/>
+			<TextField id="subject" hintText="subject"/>
+			<TextArea id="comments" hintText="comments"/>
+			<Button class="callBtn" onClick="doGetHelp">CALL ME</Button>
 		   </View>
 		 <Button id="closeBtn" title="Back" layout="horizontal"/>
 	</Window>
