@@ -11,20 +11,24 @@ function Controller() {
     function doGetHelp() {
         Alloy.Globals.authstr = Titanium.App.Properties.getString("encodedUser");
         Alloy.Globals.problemDeviceId = $.problemDeviceId.value;
-        Alloy.Globals.problemDeviceId = $.subject.value;
-        Alloy.Globals.problemDeviceId = $.comments.value;
+        Alloy.Globals.subject = $.subject.value;
+        Alloy.Globals.comments = $.comments.value;
         arguments[0] || {};
         var collection = Alloy.Collections.getHelp;
         collection.config.headers.Authorization = Alloy.Globals.authstr;
         collection.config.headers.problemDeviceId = Alloy.Globals.problemDeviceId;
         collection.config.headers.subject = Alloy.Globals.subject;
         collection.config.headers.comments = Alloy.Globals.comments;
-        collection.save();
         collection.fetch({
             success: function() {
+                alert("We will contact you as soon as possible.", "Success!", function() {
+                    CloseWindow();
+                });
                 _.each(collection.models, function() {});
             },
-            error: function() {}
+            error: function() {
+                alert("There seems to be a problem. please try again later!");
+            }
         });
     }
     function CloseWindow() {
@@ -110,6 +114,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
+    alert = require("alert");
     $.closeBtn.addEventListener("click", function() {
         CloseWindow();
     });
