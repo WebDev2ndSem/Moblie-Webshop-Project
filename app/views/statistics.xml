@@ -1,18 +1,22 @@
 <Alloy>
-	<Window class="container">
+	<Collection src="statistics" />
+	<Window class="container" >
 		<Label top="10dp">Statistics</Label>
-		<View id="mainView" layout="horizontal" >
+		<View id="mainView" layout="horizontal" dataCollection="statistics" >
 		
 			<View class="statView"  layout="vertical">
 				 <Label>Daily payments:</Label>
+				 <Label text="{incomePerDay}" />
 			</View>
 			
 			<View class="statView" layout="vertical" >
 				 <Label>Weekly payments:</Label>
+				 <Label text="{incomePerWeek}" />
 			</View>
 			
 			<View class="statView" layout="vertical">
 				 <Label>Monthly payments:</Label>
+				 <Label text="{incomePerMonth}" />
 			</View>
 		
 		</View>

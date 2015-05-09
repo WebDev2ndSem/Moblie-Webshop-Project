@@ -8,6 +8,16 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
+    function alert(message, title, callback) {
+        var dialog = Ti.UI.createAlertDialog({
+            title: title || "Alert",
+            message: message,
+            ok: "ok"
+        });
+        callback && dialog.addEventListener("click", callback);
+        dialog.show();
+        return;
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "alert";
     if (arguments[0]) {
@@ -25,6 +35,10 @@ function Controller() {
     var exports = {};
     exports.destroy = function() {};
     _.extend($, $.__views);
+    if ("undefined" != typeof exports) {
+        "undefined" != typeof module && module.exports && (exports = module.exports = alert);
+        exports.alert = alert;
+    }
     _.extend($, exports);
 }
 

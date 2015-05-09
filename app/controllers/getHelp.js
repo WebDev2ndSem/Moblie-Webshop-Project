@@ -33,7 +33,7 @@ function doGetHelp(e){
 	        });
 	    },
 	    error : function(){
-				alert('There seems to be a problem. please try again later!');
+			alert('Please try again later.', 'Error!', function () { CloseWindow(); });
 	    }
 	});
 };
