@@ -8,14 +8,16 @@
 	width:"80%",
 	height: "60dp",
 	top: "20dp",
-	borderColor: "#bbbbbb"
+	borderColor: "#bbbbbb",
+	color: "#000000"
 }
 
 "TextArea" : {
 	width:"80%",
 	height: "100dp",
 	top: "20dp",
-	borderColor: "#bbbbbb"
+	borderColor: "#bbbbbb",
+	color: "#000000"
 }
 
 

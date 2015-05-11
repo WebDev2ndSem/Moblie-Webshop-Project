@@ -73,6 +73,7 @@ function Controller() {
         height: "60dp",
         top: "20dp",
         borderColor: "#bbbbbb",
+        color: "#000000",
         id: "problemDeviceId",
         hintText: "device"
     });
@@ -82,6 +83,7 @@ function Controller() {
         height: "60dp",
         top: "20dp",
         borderColor: "#bbbbbb",
+        color: "#000000",
         id: "subject",
         hintText: "subject"
     });
@@ -91,6 +93,7 @@ function Controller() {
         height: "100dp",
         top: "20dp",
         borderColor: "#bbbbbb",
+        color: "#000000",
         id: "comments",
         hintText: "comments"
     });

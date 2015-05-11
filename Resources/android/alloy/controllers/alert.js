@@ -33,6 +33,10 @@ function Controller() {
     }
     var $ = this;
     var exports = {};
+    $.__views.alert = Ti.UI.createView({
+        id: "alert"
+    });
+    $.__views.alert && $.addTopLevelView($.__views.alert);
     exports.destroy = function() {};
     _.extend($, $.__views);
     if ("undefined" != typeof exports) {
