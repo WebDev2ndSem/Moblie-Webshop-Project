@@ -1,7 +1,7 @@
 exports.definition = {  
     config: {
     	"authstr": null,
-        "URL": "http://old.muranddesign.com/verifone/user/income",
+        "URL": "https://old.muranddesign.com/verifone/user/income",
         "debug": 1, 
         "adapter": {
             "type": "restapi",

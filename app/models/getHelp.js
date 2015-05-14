@@ -3,7 +3,7 @@ exports.definition = {
    
     config: {
     	"authstr": null,
-        "URL": "http://old.muranddesign.com/verifone/help",
+        "URL": "https://old.muranddesign.com/verifone/help",
         "debug": 1, 
         "adapter": {
             "type": "restapi",
